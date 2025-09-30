@@ -1,6 +1,6 @@
 package com.pretzel.dev.villagertradelimiter.wrappers;
 
-import de.tr7zw.changeme.nbtapi.NBTCompound;
+import de.tr7zw.nbtapi.NBTCompound; // ZMIANA TUTAJ
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
