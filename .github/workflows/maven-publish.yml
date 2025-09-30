@@ -1,37 +1,33 @@
-name: Java CI with Maven
+name: Build VillagerTradeLimiter Plugin
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ] # Uruchom przy push do gałęzi main
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" ] # Uruchom przy pull request do gałęzi main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read # Nadanie uprawnień do odczytu zawartości repozytorium
+      contents: read
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository code
         uses: actions/checkout@v4
 
-      # Ustawienie Javy w wersji 17, która jest standardem dla nowych wersji Minecraft
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: maven
+          cache: 'maven'
 
-      - name: Build with Maven
-        # Czyste budowanie paczki, pomijając testy, które nie są potrzebne w tym projekcie
-        run: mvn clean package -DskipTests
+      - name: Build project with Maven
+        run: mvn -B package --file pom.xml
 
-      # Przesłanie zbudowanego pliku .jar jako artefaktu
-      - name: Upload artifact
+      - name: Upload plugin artifact
         uses: actions/upload-artifact@v4
         with:
-          name: VillagerTradeLimiter-Plugin
-          # Użycie `find` zapewnia, że plik .jar zostanie znaleziony, nawet jeśli nazwa się zmieni
-          path: ${{ github.workspace }}/target/VillagerTradeLimiter-*.jar
+          name: VillagerTradeLimiter-Plugin-Jar
+          path: target/VillagerTradeLimiter-*.jar
