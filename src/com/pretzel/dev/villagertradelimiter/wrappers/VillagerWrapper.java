@@ -1,9 +1,9 @@
 package com.pretzel.dev.villagertradelimiter.wrappers;
 
-import de.tr7zw.changeme.nbtapi.NBTCompound;
-import de.tr7zw.changeme.nbtapi.NBTCompoundList;
-import de.tr7zw.changeme.nbtapi.NBTEntity;
-import de.tr7zw.changeme.nbtapi.iface.ReadWriteNBT;
+import de.tr7zw.nbtapi.NBTCompound;         // ZMIANA TUTAJ
+import de.tr7zw.nbtapi.NBTCompoundList;    // ZMIANA TUTAJ
+import de.tr7zw.nbtapi.NBTEntity;          // ZMIANA TUTAJ
+import de.tr7zw.nbtapi.iface.ReadWriteNBT; // ZMIANA TUTAJ
 import org.bukkit.entity.Villager;
 import org.bukkit.inventory.ItemStack;
 import org.checkerframework.checker.nullness.qual.NonNull;
