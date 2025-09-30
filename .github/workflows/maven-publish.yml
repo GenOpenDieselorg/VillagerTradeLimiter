@@ -7,9 +7,9 @@ on:
 
   # Te zostają, aby akcja działała też automatycznie
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
