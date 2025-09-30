@@ -1,10 +1,15 @@
 name: Build VillagerTradeLimiter Plugin
 
+# Definicja wyzwalaczy (triggers)
 on:
+  # To dodaje przycisk "Run workflow" w zakładce Actions
+  workflow_dispatch:
+
+  # Te zostają, aby akcja działała też automatycznie
   push:
-    branches: [ "main" ] # Uruchom przy push do gałęzi main
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ] # Uruchom przy pull request do gałęzi main
+    branches: [ "main" ]
 
 jobs:
   build:
